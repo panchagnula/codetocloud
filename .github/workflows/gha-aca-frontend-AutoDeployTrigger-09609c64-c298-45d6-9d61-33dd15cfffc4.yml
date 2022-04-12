@@ -1,4 +1,4 @@
-name: Trigger auto deployment for containerapps
+name: Deploy to gha-aca-frontend
 
 # When this action will be executed
 on:
