@@ -8,7 +8,7 @@ const apiBaseUrl = process.env.API_BASE_URL || `https://album-api.${process.env.
 const api = axios.create({
   baseURL: apiBaseUrl,
   params: {},
-  timeout: process.env.TIMEOUT || 5000,
+  timeout: process.env.TIMEOUT || 15000,
 });
 
 /* GET home page. */
