@@ -4,8 +4,9 @@ require("dotenv").config();
 const axios = require("axios");
 const background = process.env.BACKGROUND_COLOR;
 
+const apiBaseUrl = process.env.API_BASE_URL || `https://album-api.${process.env.CONTAINER_APP_ENV_DNS_SUFFIX}`;
 const api = axios.create({
-  baseURL: "https://album-api." + process.env.CONTAINER_APP_ENV_DNS_SUFFIX,
+  baseURL: apiBaseUrl,
   params: {},
   timeout: process.env.TIMEOUT || 5000,
 });
