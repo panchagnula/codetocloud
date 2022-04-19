@@ -4,7 +4,7 @@ const albums = [
     title: "Sgt Peppers Lonely Hearts Club Band",
     artist: "The Beatles",
     price: 56.99,
-    image_url:
+    image_URL:
       "https://www.listchallenges.com/f/items/f3b05a20-31ae-4fdf-aebd-d1515af54eea.jpg",
   },
   {
@@ -12,7 +12,7 @@ const albums = [
     title: "Pet Sounds",
     artist: "The Beach Boys",
     price: 17.99,
-    image_url:
+    image_URL:
       "https://www.listchallenges.com/f/items/fdef1440-e979-455a-90a7-14e77fac79af.jpg",
   },
   {
@@ -20,7 +20,7 @@ const albums = [
     title: "The Beatles: Revolver",
     artist: "The Beatles",
     price: 39.99,
-    image_url:
+    image_URL:
       "https://www.listchallenges.com/f/items/19ff786d-d7a4-4fdc-bee2-59db8b33370d.jpg",
   },
   {
@@ -28,7 +28,7 @@ const albums = [
     title: "Highway 61 Revisited",
     artist: "Bob Dylan",
     price: 39.99,
-    image_url:
+    image_URL:
       "https://www.listchallenges.com/f/items/428cf087-6c24-45ad-bf8c-bd3c57ddf444.jpg",
   },
   {
@@ -36,7 +36,7 @@ const albums = [
     title: "Rubber Soul",
     artist: "The Beatles",
     price: 39.99,
-    image_url:
+    image_URL:
       "https://www.listchallenges.com/f/items/ebc794ef-1491-4672-a007-0081edc1a8ae.jpg",
   },
   {
@@ -44,7 +44,7 @@ const albums = [
     title: "What's Going On",
     artist: "Marvin Gaye",
     price: 39.99,
-    image_url:
+    image_URL:
       "https://www.listchallenges.com/f/items/e5250d6c-1c15-4617-a943-b27e87e21704.jpg",
   },
 ];
