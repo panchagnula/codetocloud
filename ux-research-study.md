@@ -24,51 +24,9 @@ For this study, you won't be working directly with the code; we've created Docke
 
 These images are in a public repository and do not require authentication.
 
-- `albums.azurecr.io/aca-frontend:1.0`
+- `albums.azurecr.io/aca-frontend:1.0` – the frontend app
     * Exposed port: 3000
     * Environment variables:
-        * `API_BASE_URL` - The base URL of the web API.
-        * `BACKGROUND_COLOR` (optional) - The background color of the UI.
-- `albums.azurecr.io/aca-node:1.0`
+        * `API_BASE_URL` - This variable must be set to the base URL of the backend API (e.g., `https://backend.my-app.com`).
+- `albums.azurecr.io/aca-node:1.0` – the backend web API
     * Exposed port: 3000
-
-### Run the app locally (optional)
-
-If you have Docker Desktop installed on your machine, you can run the app locally to see how it works.
-
-You can use Docker Compose to run both services at once.
-
-1. Create a file named `docker-compose.yml`.
-
-    ```yaml
-    version: "3"
-      
-    services:
-      frontend:
-        image: albums.azurecr.io/aca-frontend:1.0
-        environment:
-          - API_BASE_URL=http://api:3000
-          - BACKGROUND_COLOR=blue
-        ports:
-          - "3000:3000"
-        depends_on:
-          - api
-
-      api:
-        image: albums.azurecr.io/aca-node:1.0
-        environment:
-          - API_BASE_URL=http://api:3000
-        expose:
-          - "3000"
-    ```
-
-1. Open a terminal to the location you created the file and run the following command:
-
-    ```bash
-    docker-compose up
-    ```
-
-1. Open your browser to http://localhost:3000.
-
-1. When finished, use `Ctrl-C` to stop the app.
-
