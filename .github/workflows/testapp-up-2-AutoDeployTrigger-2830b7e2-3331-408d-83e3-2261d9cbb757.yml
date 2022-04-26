@@ -7,7 +7,7 @@ on:
     branches: 
       [ main ]
     paths:
-    - '**'
+    - 'aca-node/**'
     - '.github/workflows/testapp-up-2-AutoDeployTrigger-2830b7e2-3331-408d-83e3-2261d9cbb757.yml'
 
   # Allow mannually trigger 
@@ -27,7 +27,7 @@ jobs:
       - name: Log in to container registry
         uses: docker/login-action@v1
         with:
-          registry: catestappup22341794618acr.azurecr.io
+          registry: catestappup22885272408acr.azurecr.io
           username: ${{ secrets.TESTAPPUP2_REGISTRY_USERNAME }}
           password: ${{ secrets.TESTAPPUP2_REGISTRY_PASSWORD }}
 
@@ -35,9 +35,9 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: catestappup22341794618acr.azurecr.io/testapp-up-2:${{ github.sha }}
-          file: ./Dockerfile
-          context: ./
+          tags: catestappup22885272408acr.azurecr.io/testapp-up-2:${{ github.sha }}
+          file: aca-node/Dockerfile
+          context: aca-node/
 
 
   deploy:
@@ -58,5 +58,5 @@ jobs:
             echo "Installing containerapp extension"
             az config set extension.use_dynamic_install=yes_without_prompt
             echo "Starting Deploying"
-            az containerapp registry set -n testapp-up-2 -g sisirap-rg --server catestappup22341794618acr.azurecr.io --username  ${{ secrets.TESTAPPUP2_REGISTRY_USERNAME }} --password ${{ secrets.TESTAPPUP2_REGISTRY_PASSWORD }}
-            az containerapp update -n testapp-up-2 -g sisirap-rg --image catestappup22341794618acr.azurecr.io/testapp-up-2:${{ github.sha }}
+            az containerapp registry set -n testapp-up-2 -g sisirap-rg --server catestappup22885272408acr.azurecr.io --username  ${{ secrets.TESTAPPUP2_REGISTRY_USERNAME }} --password ${{ secrets.TESTAPPUP2_REGISTRY_PASSWORD }}
+            az containerapp update -n testapp-up-2 -g sisirap-rg --image catestappup22885272408acr.azurecr.io/testapp-up-2:${{ github.sha }}
